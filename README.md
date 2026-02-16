@@ -15,6 +15,8 @@ STEP:
 - Retrain and compare models
 
 DATA:
+- Link: https://raw.githubusercontent.com/msh209/INT3625/main/data/Student_Performance.csv
+
 - Description: The Student Performance Dataset is a dataset designed to examine the factors influencing academic student performance. The dataset consists of 10,000 student records, with each record containing information about various predictors and a performance index.
 - Features:
   + Hours Studied: The total number of hours spent studying by each student.

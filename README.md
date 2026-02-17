@@ -22,8 +22,23 @@ DATA:
   + Extracurricular Activities: Whether the student participates in extracurricular activities (Yes or No).
   + Sleep Hours: The average number of hours of sleep the student had per day.
   + Sample Question Papers Practiced: The number of sample question papers the student practiced.
-
+    
 - What is the response aka labels?
-  + Performance Index: A measure of the overall performance of each student. The performance index represents the student's academic performance and has been rounded to the nearest integer. The index ranges from 10 to 100, with higher values indicating better performance.
+  + Performance Index: A measure of the overall performance of each student.
+  + The performance index represents the student's academic performance and has been rounded to the nearest integer. The index ranges from 10 to 100, with higher values indicating better performance.
 
 - Why use regression? The response variable in this dataset is continuous => this is a regression problem
+
+
+DATA INSPECTION:
+<img width="1025" height="886" alt="image" src="https://github.com/user-attachments/assets/0fdfbef6-fcf3-40ee-b254-be67c56bf803" />
+
+- Previous Scores is a very strong predictor of Performance Index and might be the strongest predictor.
+- Hours Studied and Sample Question Papers Practiced are also positively correlated with performance.
+- Sleep Hours shows weak relationship.
+- Extracurricular Activities shows no clear relationship => may still have small impact.
+- Performance Index distribution is normal => Linear regression is appropriate.
+
+LINEAR REGRESSION:
+- Formula: PerformanceIndex=𝛽0+𝛽1×PreviousScores+𝛽2×SleepHours+𝛽3×SampleQuestionPapersPracticed + 𝛽4xExtracurricularActivities
+- y is 

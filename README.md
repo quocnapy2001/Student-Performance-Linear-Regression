@@ -40,5 +40,4 @@ DATA INSPECTION:
 - Performance Index distribution is normal => Linear regression is appropriate.
 
 LINEAR REGRESSION:
-- Formula: PerformanceIndex=𝛽0+𝛽1×PreviousScores+𝛽2×SleepHours+𝛽3×SampleQuestionPapersPracticed + 𝛽4xExtracurricularActivities
-- y is 
+- Formula: y (Performance Index) =  -33.92194621555637 + 2.852483930072587 * Hours Studied + 1.0169881989329308 * Previous Scores + 0.6086166795764204 * Extracurricular Activities + 0.4769414841762726 * Sleep Hours + 0.4769414841762726 * Sample Question Papers Practiced

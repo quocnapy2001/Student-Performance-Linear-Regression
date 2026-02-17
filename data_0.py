@@ -1,18 +1,27 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 16 12:54:03 2026
-
-@author: Owner
-"""
-#
-
 import pandas as pd
 import seaborn as sns
 
-url = "https://raw.githubusercontent.com/msh209/INT3625/main/data/Student_Performance.csv"
 
-df = pd.read_csv(url, index_col = 0)
+### Data Import and Inspect
+directory = "/Users\\Owner\\Documents\\GitHub\\Student-Performance-Linear-Regression\\student performance.xlsx"
+
+df = pd.read_excel(directory, index_col = 0)
+
 
 df_info = df.info()
+# all data are non-nulL
+# Extracurricular Activities is object
 
-df_T = df.describe().T
+df_T = df.describe()
+
+
+### Seaborn
+sns.pairplot(df, hue="Extracurricular Activities", diag_kind='hist')
+
+
+### Convert Extracurricular Activities to numeric
+df['Extracurricular Activities'] = df['Extracurricular Activities'].astype('category')
+df['Extracurricular Activities'] = df['Extracurricular Activities'].map({
+    "Yes": 1,
+    "No" : 0
+    })

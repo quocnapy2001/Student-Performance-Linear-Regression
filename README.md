@@ -1,7 +1,7 @@
 # Student-Performance-Linear-Regression
 
 ## AIM: 
-- This project is for study purpose with the goal to utilise supervised learning such as linear regression to predict student perfromance based on academic and behavioural predictors.
+- This project is for study purpose with the goal to utilise supervised learning such as linear regression to predict student performance based on academic and behavioural predictors.
 
 ## STEP: 
 - Load the dataset.

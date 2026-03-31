@@ -48,11 +48,11 @@
 - Overall, the model suggests that academic effort (Hours Studied) and prior ability (Previous Scores) are the most influential factors in predicting student performance.
 
 ## Evaluation Metrics:
-  - **Adjusted R-Square:** 98.90%. => this show excellent model fit, indicating that the selected predictors explain nearly all variation in student performance.
-  - **Mean Absolute Error (MAE):** 1.61.
+  - **Adjusted R-Square:** 98.90%. => This shows an excellent model fit, indicating that the selected predictors explain nearly all variation in student performance.
+  - **Mean Absolute Error (MAE):** 1.61. => This indicates that, on average, the model’s predictions deviate from the actual values by approximately 1.6 points.
   - **Mean Squared Error (MSE):** 4.08.
-  - **Root Mean Squared Error (RMSE):** 2.02. => this show low prediction errors.
+  - **Root Mean Squared Error (RMSE):** 2.02. =>  This shows very low prediction error, with predicted values typically within around 2 points of the actual performance scores.
 
 ## Conclusion:
-- The results indicate that student performance can be effectively predicted using above variables.
-- However, such result would just reflect the structured nature of the dataset rather than real-world conditions.
+- The results indicate that student performance can be predicted with a high degree of accuracy using the selected variables, particularly hours studied and previous scores.
+- However, the exceptionally strong model performance is likely to reflect the structured and simplified nature of the dataset, and may not fully generalise to more complex real-world conditions.

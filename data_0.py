@@ -9,7 +9,7 @@ df = pd.read_excel(directory, index_col = 0)
 
 
 df_info = df.info()
-# all data are non-nulL
+# all data are non-null
 # Extracurricular Activities is object
 
 df_T = df.describe()

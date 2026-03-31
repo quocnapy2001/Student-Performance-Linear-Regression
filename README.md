@@ -1,8 +1,9 @@
 # Student-Performance-Linear-Regression
 
-AIM: This project is for study purpose with the goal to utilise supervised learning such as linear regression to predict student perfromance based on academic and behavioural predictors.
+## AIM: 
+This project is for study purpose with the goal to utilise supervised learning such as linear regression to predict student perfromance based on academic and behavioural predictors.
 
-STEP: 
+## STEP: 
 - Load the dataset
 - Visualize relationships between variables
 - Select features and target variable
@@ -14,7 +15,7 @@ STEP:
 - Encode categorical variables
 - Retrain and compare models
 
-DATA:
+## DATA:
 - Description: The Student Performance Dataset is a dataset designed to examine the factors influencing academic student performance. The dataset consists of 10,000 student records, with each record containing information about various predictors and a performance index.
 - Features:
   + Hours Studied: The total number of hours spent studying by each student.
@@ -30,7 +31,7 @@ DATA:
 - Why use regression? The response variable in this dataset is continuous => this is a regression problem
 
 
-DATA INSPECTION:
+## DATA INSPECTION:
 <img width="1025" height="886" alt="image" src="https://github.com/user-attachments/assets/0fdfbef6-fcf3-40ee-b254-be67c56bf803" />
 
 - Previous Scores is a very strong predictor of Performance Index and might be the strongest predictor.

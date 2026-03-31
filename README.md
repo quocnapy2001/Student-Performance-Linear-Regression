@@ -40,12 +40,17 @@
 - Performance Index follows an approximately normal distribution, which satisfies a key assumption of linear regression that residuals are normally distributed, making it an appropriate modelling choice.
 
 ## LINEAR REGRESSION:
-- **Cross Validation:** 
-  - **CV R² Scores:** [0.98871681, 0.98838426, 0.98891416, 0.98828704, 0.98900483]
-  - **Mean CV R²:** 0.9887 ± 0.0003
-  - 5-fold cross-validation yielded a mean R² of 0.9887 ± 0.0003 across all folds, consistent with the test R² of 98.9%. The negligible standard deviation indicates the model is highly stable and its performance is not dependent on any particular train/test split, suggesting reliable generalisation.
+- **Cross Validation:**
+  
+      CV R² Scores: [0.98871681, 0.98838426, 0.98891416, 0.98828704, 0.98900483]
+      Mean CV R²: 0.9887 ± 0.0003
+  
+  - 5-fold cross-validation yielded a mean R² of 0.9887 ± 0.0003 across all folds, consistent with the test R² of 98.9%. The negligible standard deviation indicates the model is highly stable and its performance is not dependent on any particular train/test split, suggesting reliable generalisation. This stability justified proceeding with the full model interpretation.
+  - While these figures are impressive, such consistency and high R² across all folds also reinforces the earlier conclusion that the dataset is likely synthetic or highly structured. In real-world data you would typically expect more variance between folds and a lower mean R². So the cross-validation confirms the model is well-fitted to this dataset, but does not necessarily guarantee the same performance on messier, real-world student data.
 
-- **Formula:** y (Performance Index) =  -33.92 + 2.85 * Hours Studied + 1.02 * Previous Scores + 0.61 * Extracurricular Activities + 0.48 * Sleep Hours + 0.19 * Sample Question Papers Practiced
+- **The fitted regression equation is:**
+
+      y (Performance Index) =  -33.92 + 2.85 * Hours Studied + 1.02 * Previous Scores + 0.61 * Extracurricular Activities + 0.48 * Sleep Hours + 0.19 * Sample Question Papers Practiced
   
   - Hours Studied and Previous Scores have the largest positive impact on performance. Specifically, holding all other variables constant, a one-unit increase in Hours Studied is associated with an increase of 2.85 points in the Performance Index, while a one-unit increase in Previous Scores is associated with an increase of 1.02 points.
   - Extracurricular Activities is a binary variable (1 = Yes, 0 = No). The coefficient of 0.61 indicates that, on average, students who participate in extracurricular activities score approximately 0.61 points higher than those who do not, holding other factors constant.
@@ -62,9 +67,16 @@
   
 <img width="567" height="352" alt="image" src="https://github.com/user-attachments/assets/713d0406-db6b-45b9-a55b-8aeec302cb27" />
 
-  - The residual vs fitted plot shows randomly scattered points with no discernible pattern around the zero line, confirming the assumptions of linearity and homoscedasticity. The consistent spread of residuals across all fitted values suggests the model performs equally well across the full range of predicted Performance Index scores.
+  - The residual vs fitted plot shows randomly scattered points with no discernible pattern around the zero line, confirming the assumptions of linearity and homoscedasticity. The consistent spread of residuals across all fitted values suggests the model performs equally well across the full range of predicted Performance Index scores. Although there appears to be a slight outlier around fitted value ~40 with a residual near -8, it is not concerning considering the overall 2000 test records.
 
+## Compare with other models: 
+      - Linear Regression: R² = 0.9890
+      - Ridge: R² = 0.9890
+      - Lasso: R² = 0.9868
+      - Decision Tree: R² = 0.9762
+- To contextualise the linear regression results, three alternative models were trained and evaluated on the same test set. Linear Regression and Ridge Regression achieved identical R² scores of 0.9890, suggesting minimal multicollinearity among predictors and confirming that regularisation was unnecessary
+- Lasso Regression performed marginally lower at 0.9868, likely due to its tendency to shrink smaller coefficients toward zero, potentially penalising weaker predictors such as Sleep Hours and Sample Question Papers Practiced.
+- The Decision Tree Regressor recorded the lowest R² of 0.9762, which is a meaningful result. Its relatively weaker performance on this dataset implies that the underlying relationships between predictors and Performance Index are predominantly linear, retrospectively validating the choice of linear regression as the most appropriate model.
 
 ## Conclusion:
-- The results indicate that student performance can be predicted with a high degree of accuracy using the selected variables, particularly hours studied and previous scores.
-- However, the exceptionally strong model performance is likely to reflect the structured and simplified nature of the dataset, and may not fully generalise to more complex real-world conditions.
+

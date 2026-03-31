@@ -16,19 +16,19 @@
 - Retrain and compare models.
 
 ## DATA:
-- Description: The Student Performance Dataset is a dataset designed to examine the factors influencing academic student performance. The dataset consists of 10,000 student records, with each record containing information about various predictors and a performance index.
-- Features:
-  + Hours Studied: The total number of hours spent studying by each student.
-  + Previous Scores: The scores obtained by students in previous tests.
-  + Extracurricular Activities: Whether the student participates in extracurricular activities (Yes or No).
-  + Sleep Hours: The average number of hours of sleep the student had per day.
-  + Sample Question Papers Practiced: The number of sample question papers the student practiced.
-    
-- What is the response aka labels?
-  + Performance Index: A measure of the overall performance of each student.
+- **Description:** The Student Performance Dataset is a dataset designed to examine the factors influencing academic student performance. The dataset consists of 10,000 student records, with each record containing information about various predictors and a performance index.
+- **Features:**
+  + **Hours Studied:** The total number of hours spent studying by each student.
+  + **Previous Scores:** The scores obtained by students in previous tests.
+  + **Extracurricular Activities:** Whether the student participates in extracurricular activities (Yes or No).
+  + **Sleep Hours:** The average number of hours of sleep the student had per day.
+  + **Sample Question Papers Practiced:** The number of sample question papers the student practiced.
+    **
+- What is the response aka labels?**
+  + **Performance Index:** A measure of the overall performance of each student.
   + The performance index represents the student's academic performance and has been rounded to the nearest integer. The index ranges from 10 to 100, with higher values indicating better performance.
 
-- Why use regression? The response variable in this dataset is continuous => this is a regression problem.
+- **Why use regression?** The response variable in this dataset is continuous => this is a regression problem.
 
 
 ## DATA INSPECTION:
@@ -41,10 +41,18 @@
 - Performance Index distribution is normal => Linear regression is appropriate.
 
 ## LINEAR REGRESSION:
-- Formula: y (Performance Index) =  -33.92 + 2.85 * Hours Studied + 1.02 * Previous Scores + 0.61 * Extracurricular Activities + 0.48 * Sleep Hours + 0.48 * Sample Question Papers Practiced
+- **Formula:** y (Performance Index) =  -33.92 + 2.85 * Hours Studied + 1.02 * Previous Scores + 0.61 * Extracurricular Activities + 0.48 * Sleep Hours + 0.19 * Sample Question Papers Practiced
+  
+  - Hours Studied and Previous Scores have the largest positive impact on performance. Specifically, holding all other variables constant, a one-unit increase in Hours Studied is associated with an increase of 2.85 points in the Performance Index, while a one-unit increase in Previous Scores is associated with an increase of 1.02 points.
+  - Extracurricular Activities is a binary variable (1 = Yes, 0 = No). The coefficient of 0.61 indicates that, on average, students who participate in extracurricular activities score approximately 0.61 points higher than those who do not, holding other factors constant.
+- Overall, the model suggests that academic effort (Hours Studied) and prior ability (Previous Scores) are the most influential factors in predicting student performance.
 
-- Evaluation Metrics:
-  - Adjusted R-Square is: 98.90%.
-  - Mean Absolute Error (MAE) is: 1.61.
-  - Mean Squared Error (MSE) is: 4.08.
-  - Root Mean Squared Error (RMSE): 2.02.
+## Evaluation Metrics:
+  - **Adjusted R-Square:** 98.90%. => this show excellent model fit, indicating that the selected predictors explain nearly all variation in student performance.
+  - **Mean Absolute Error (MAE):** 1.61.
+  - **Mean Squared Error (MSE):** 4.08.
+  - **Root Mean Squared Error (RMSE):** 2.02. => this show low prediction errors.
+
+## Conclusion:
+- The results indicate that student performance can be effectively predicted using above variables.
+- However, such result would just reflect the structured nature of the dataset rather than real-world conditions.

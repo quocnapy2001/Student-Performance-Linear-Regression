@@ -41,8 +41,8 @@
 
 ## LINEAR REGRESSION:
 - **Cross Validation:** 
-  - CV R² Scores: [0.98871681, 0.98838426, 0.98891416, 0.98828704, 0.98900483]
-  - Mean CV R²: 0.9887 ± 0.0003
+  - **CV R² Scores:** [0.98871681, 0.98838426, 0.98891416, 0.98828704, 0.98900483]
+  - **Mean CV R²:** 0.9887 ± 0.0003
   - 5-fold cross-validation yielded a mean R² of 0.9887 ± 0.0003 across all folds, consistent with the test R² of 98.9%. The negligible standard deviation indicates the model is highly stable and its performance is not dependent on any particular train/test split, suggesting reliable generalisation.
 
 - **Formula:** y (Performance Index) =  -33.92 + 2.85 * Hours Studied + 1.02 * Previous Scores + 0.61 * Extracurricular Activities + 0.48 * Sleep Hours + 0.19 * Sample Question Papers Practiced
